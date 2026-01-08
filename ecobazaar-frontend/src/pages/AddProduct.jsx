@@ -30,9 +30,9 @@ const AddProduct = () => {
             const reader = new FileReader();
             reader.onloadend = () => {
                 // The result is "data:image/jpeg;base64,....."
-                // Your backend expects just the Base64 part, or handles the prefix.
-                // Your Product model handles the prefix, so sending the whole string is usually fine,
-                // but let's strip the prefix just to be safe if your backend is picky.
+                // our backend expects just the Base64 part, or handles the prefix.
+                // our Product model handles the prefix, so sending the whole string is usually fine,
+                // but let's strip the prefix just to be safe if our backend is picky.
                 const base64String = reader.result.replace("data:", "").replace(/^.+,/, "");
                 setFormData({ ...formData, imageBase64: base64String });
             };
